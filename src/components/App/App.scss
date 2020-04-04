@@ -2,12 +2,11 @@
 
 .welcome {
   background: linear-gradient(to bottom, #202020, #111119) fixed !important;
-  min-height: 100%;
+  min-height: 100vh;
+  width: 100%;
   position: relative;
   overflow: hidden;
-  &.splat-toggle {
-    top: 20px;
-  }
+  padding: 0 2.5em 0 2.5em;
 
   .rain {
     position: absolute;
@@ -93,10 +92,9 @@
   }
 
   .greeting {
-    font-size: 2em;
-    font-family: 'lato',sans-serif;
+    font-size: 4vw;
+    font-family: 'lato', sans-serif;
     font-weight: 300;
-    font-size: 50px;
     letter-spacing: 10px;
     position: relative;
     top: 40vh;
@@ -112,5 +110,24 @@
     }
   }
 
+  $width: 10em;
+
+  #about-btn {
+    width: 12rem;
+    position: relative;
+    top: 45vh;
+    z-index: 10;
+    color: #fff;
+    transition: all 0.4s ease;
+
+    a {
+      color: #fff;
+      text-align: center;
+    }
+
+    &:hover {
+      color: #111119;
+    }
+  }
 }
 

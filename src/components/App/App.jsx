@@ -1,11 +1,12 @@
 // Dependencies
+import './App.scss'
 import React, {
   useState,
   useEffect
-} from 'react'
-import './App.scss'
+}               from 'react'
+import { Link } from 'react-router-dom'
 
-const App = () => {
+const App = (props) => {
   const [drops, setDrops] = useState([])
   const [backDrops, setBackDrops] = useState([])
 
@@ -67,6 +68,9 @@ const App = () => {
       <div className='greeting'>
         <span>I'm a Full Stack Developer</span>
       </div>
+      <Link to='/about' className='btn btn-outline-light rounded-0 d-block mx-auto' id='about-btn'>
+        Click Me!
+      </Link>
       <div className='rain front-row'>{ drops }</div>
       <div className='rain back-row'>{ backDrops }</div>
     </div>
