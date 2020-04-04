@@ -61,7 +61,12 @@ const App = () => {
 
   return (
     <div className='welcome splat-toggle'>
-      <div className='text-white my-auto mx-auto'>App</div>
+      <div className='greeting'>
+        <span>Hi there! I'm </span><span id='my-name'>Mike Heft</span>
+      </div>
+      <div className='greeting'>
+        <span>I'm a Full Stack Developer</span>
+      </div>
       <div className='rain front-row'>{ drops }</div>
       <div className='rain back-row'>{ backDrops }</div>
     </div>

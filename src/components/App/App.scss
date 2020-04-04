@@ -1,11 +1,10 @@
 @import 'src/custom';
 
 .welcome {
-  background: linear-gradient(to bottom, #202020, #111119);
+  background: linear-gradient(to bottom, #202020, #111119) fixed !important;
+  min-height: 100%;
+  position: relative;
   overflow: hidden;
-  height: 100vh;
-  object-fit: cover;
-
   &.splat-toggle {
     top: 20px;
   }
@@ -92,5 +91,26 @@
       transform: scale(1.5);
     }
   }
+
+  .greeting {
+    font-size: 2em;
+    font-family: 'lato',sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 10px;
+    position: relative;
+    top: 40vh;
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+
+    #my-name {
+      background: linear-gradient(#e74c3c, #e74c3c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
 }
 
