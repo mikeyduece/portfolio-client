@@ -1,22 +1,20 @@
 // Dependencies
-import React                                     from 'react'
-import ReactDOM                                  from 'react-dom'
-import { Provider }                              from 'react-redux'
-import { applyMiddleware, compose, createStore } from 'redux'
-import reducers                                  from './reducers'
-import reduxThunk                                from 'redux-thunk'
+import React    from 'react'
+import ReactDOM from 'react-dom'
+import {
+  Router,
+  Route
+}               from 'react-router-dom'
+import history  from './history'
 // Components
-import App                                       from './components/App/App'
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-const store = createStore(
-  reducers,
-  composeEnhancers(applyMiddleware(reduxThunk))
-)
+import Root     from 'Root'
+import App      from 'components/App/App'
 
 ReactDOM.render(
-  <Provider store={ store }>
-    <App />
-  </Provider>,
+  <Root>
+    <Router history={ history }>
+      <Route path='/' component={ App } />
+    </Router>
+  </Root>,
   document.querySelector('#root')
 )
