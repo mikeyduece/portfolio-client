@@ -1,5 +1,12 @@
 @import 'src/stylesheets/custom';
 
 .about {
+  height: 100%;
+  width: 100%;
+  margin-top: 3em;
 
+  .react-reveal {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
