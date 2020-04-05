@@ -1,0 +1,33 @@
+@import 'src/stylesheets/custom';
+
+#top-navbar {
+  background: linear-gradient(to bottom, #202020, $white, #111119) fixed !important;
+
+  #name-brand.navbar-brand {
+    color: $soft-red;
+  }
+
+  .navbar-collapse.collapse {
+    .navbar-nav {
+      .nav-link {
+        color: $greyish-red;
+        position: relative;
+
+        &.active, &:hover, &:active {
+          color: $soft-red;
+          text-decoration: none;
+
+          &:after {
+            border-bottom: 2px solid $soft-red;
+            bottom: 0.1em;
+            content: " ";
+            left: 0;
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+}

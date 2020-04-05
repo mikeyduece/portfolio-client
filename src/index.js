@@ -1,43 +1,25 @@
 // Dependencies
-import React    from 'react'
-import ReactDOM from 'react-dom'
+import React       from 'react'
+import ReactDOM    from 'react-dom'
 import {
   Router,
   Route
-}               from 'react-router-dom'
-import {
-  spring,
-  AnimatedRoute
-}               from 'react-router-transition'
-import history  from './history'
+}                  from 'react-router-dom'
+import history     from './history'
 // Components
-import Root     from 'Root'
-import App      from 'components/App/App'
-import About    from 'components/About/About'
+import Root        from 'Root'
+import App         from 'components/App/App'
+import About       from 'components/About/About'
+import ProjectList from 'components/Projects/ProjectList/ProjectList'
+import ContactMe   from 'components/ContactMe/ContactMe'
 
 ReactDOM.render(
   <Root>
     <Router history={ history }>
-      <AnimatedRoute
-        atEnter={{ offset: -100 }}
-        atLeave={{ offset: -100 }}
-        atActive={{ offset: 0 }}
-        mapStyles={(styles) => ({
-          transform: `translateY(${styles.offset}%)`,
-        })}
-        className="route-wrapper"
-        exact path='/' component={ App }
-      />
-      <AnimatedRoute
-        atEnter={{ offset: -100 }}
-        atLeave={{ offset: -100 }}
-        atActive={{ offset: 0 }}
-        mapStyles={(styles) => ({
-          transform: `translateX(${styles.offset}%)`,
-        })}
-        className="route-wrapper"
-        exact path='/about' component={ About }
-      />
+      <Route exact path='/' component={ App } />
+      <Route exact path='/about' component={ About } />
+      <Route exact path='/projects' component={ ProjectList } />
+      <Route exact path='/contact-me' component={ ContactMe } />
     </Router>
   </Root>,
   document.querySelector('#root')

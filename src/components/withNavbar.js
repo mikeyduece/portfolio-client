@@ -1,11 +1,11 @@
-import React  from 'react'
-import Navbar from './Navbar/Navbar'
+import React     from 'react'
+import TopNavbar from './TopNavbar/TopNavbar'
 
 export const withNavbar = Component => props => {
 
   return (
     <>
-      <Navbar />
+      <TopNavbar { ...props } />
       <Component { ...props } />
     </>
   )

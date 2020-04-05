@@ -1,12 +1,12 @@
 // Dependencies
 import React from 'react'
 
-const Navbar = () => {
+const ProjectCard = () => {
   return (
     <div>
-      Navbar
+      ProjectCard
     </div>
   )
 }
 
-export default Navbar
+export default ProjectCard
