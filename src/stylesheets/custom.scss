@@ -1,9 +1,8 @@
 // Override default variables before the import
 //$body-bg: #000;
-$white: #fff;
-
+@import './colors';
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 html, body {
   height: 100%

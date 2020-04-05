@@ -1,14 +1,13 @@
 // Dependencies
-import './About.scss'
 import React          from 'react'
 import { withNavbar } from '../withNavbar'
 
-const About = (props) => {
+const ContactMe = () => {
   return (
     <div>
-      About
+      ContactMe
     </div>
   )
 }
 
-export default withNavbar(About)
+export default withNavbar(ContactMe)
