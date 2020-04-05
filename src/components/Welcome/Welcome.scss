@@ -5,6 +5,7 @@
   min-height: 100vh;
   width: 100%;
   position: relative;
+  bottom: 1%;
   overflow: hidden;
   padding: 0 2.5em 0 2.5em;
 
@@ -117,11 +118,10 @@
     position: relative;
     top: 45vh;
     z-index: 10;
-    color: #fff;
-    transition: all 0.4s ease;
+    color: white;
 
     a {
-      color: #fff;
+      color: white;
       text-align: center;
     }
 
