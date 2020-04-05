@@ -98,7 +98,7 @@
     letter-spacing: 10px;
     position: relative;
     top: 40vh;
-    background: -webkit-linear-gradient(white, #38495a);
+    background: -webkit-linear-gradient($white, #38495a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
@@ -110,19 +110,14 @@
     }
   }
 
-  $width: 10em;
-
   #about-btn {
     width: 12rem;
     position: relative;
     top: 45vh;
     z-index: 10;
-    color: white;
-
-    a {
-      color: white;
-      text-align: center;
-    }
+    border-color: dimgrey;
+    color: ghostwhite;
+    text-align: center;
 
     &:hover {
       color: #111119;
