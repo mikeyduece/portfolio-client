@@ -17,6 +17,7 @@
     "react-form": "^4.0.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
+    "react-router-transition": "^2.0.0",
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.3.0",
     "react-transitions": "^1.0.0",

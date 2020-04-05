@@ -1,6 +1,7 @@
 // Dependencies
 import './About.scss'
-import React from 'react'
+import React          from 'react'
+import { withNavbar } from '../withNavbar'
 
 const About = () => {
   return (
@@ -10,4 +11,4 @@ const About = () => {
   )
 }
 
-export default About
+export default withNavbar(About)
