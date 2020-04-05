@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "build && s3cmd sync build/* s3://portfolio-client-development"
+    "deploy": "yarn build && s3cmd sync build/* s3://portfolio-client-development"
   },
   "eslintConfig": {
     "extends": "react-app"
