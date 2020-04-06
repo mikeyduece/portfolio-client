@@ -21,14 +21,19 @@
     min-height: 10rem;
     width: 80%;
 
-    .pt-wrapper {
+    .hex-container {
+      min-width: 0;
+      width: 17rem;
+    }
+
+    .hexagon {
       display: inline-block;
-      height: 15vw;
+      height: 80px;
       position: relative;
       text-align: center;
-      width: 15vw;
+      width: 80px;
 
-      .talking-points {
+      .speedometer-icon-container {
         background: #F6AE2D;
         display: inline-block;
         height: 100%;
@@ -39,7 +44,7 @@
         }
 
         svg.icon {
-          font-size: 10vw;
+          font-size: 3.75rem;
           color: $white;
           left: 0;
           position: absolute;
