@@ -1,7 +1,8 @@
 @import 'src/stylesheets/custom';
 
 .welcome {
-  background: linear-gradient(to bottom, #202020, #111119) fixed !important;
+  //background: linear-gradient(to bottom, #202020, $midnight-blue) fixed !important;
+  background: linear-gradient(to bottom, $dark-desaturated-blue, $midnight-blue, $dark-desaturated-blue) fixed !important;
   min-height: 100vh;
   width: 100%;
   position: relative;
@@ -99,13 +100,13 @@
     letter-spacing: 10px;
     position: relative;
     top: 40vh;
-    background: -webkit-linear-gradient($white, #38495a);
+    background: -webkit-linear-gradient($white, $dark-desaturated-blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
 
     #my-name {
-      background: linear-gradient(#e74c3c, #e74c3c);
+      background: $bright-red;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
