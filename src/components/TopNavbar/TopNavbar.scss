@@ -2,6 +2,9 @@
 
 #top-navbar {
   background: linear-gradient(to bottom, #202020, $white, $midnight-blue) fixed !important;
+  letter-spacing: 0.2rem;
+  line-height: 1.5;
+  font-weight: 100;
 
   #name-brand.navbar-brand {
     color: $soft-red;
