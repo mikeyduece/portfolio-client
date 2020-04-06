@@ -1,5 +1,13 @@
 @import 'src/stylesheets/custom';
 
+@mixin after-underline {
+  border-bottom: 2px solid $soft-red;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
 #top-navbar {
   background: linear-gradient(to bottom, $dark-desaturated-blue, $midnight-blue, $dark-desaturated-blue) fixed !important;
   letter-spacing: 0.2rem;
@@ -8,6 +16,16 @@
 
   #name-brand.navbar-brand a {
     color: $soft-red;
+    position: relative;
+
+    &:hover, &:active {
+      text-decoration: none;
+
+      &:after {
+        @include after-underline;
+        top: 1.4em;
+      }
+    }
   }
 
   .navbar-collapse.collapse {
@@ -21,12 +39,8 @@
           text-decoration: none;
 
           &:after {
-            border-bottom: 2px solid $soft-red;
+            @include after-underline;
             bottom: 0.1em;
-            content: " ";
-            left: 0;
-            position: absolute;
-            right: 0;
           }
         }
       }

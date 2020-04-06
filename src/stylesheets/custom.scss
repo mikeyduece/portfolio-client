@@ -12,9 +12,7 @@ html, body {
 h1, h2, h3, h4, h5 {
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 0.1em;
-  background: -webkit-linear-gradient($midnight-blue, $dark-blue, $midnight-blue);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $dark-desaturated-blue;
   text-align: center;
 }
 

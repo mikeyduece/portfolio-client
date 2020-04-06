@@ -5,6 +5,16 @@
   width: 100%;
 
   #heading {
-    border-bottom: 0.25rem solid $midnight-blue !important;
+    position: relative;
+
+    &:before {
+      content: "";
+      left: 10%;
+      bottom: 0;
+      height: 1px;
+      position: absolute;
+      width: 75%;
+      border-bottom: 0.25rem solid $dark-desaturated-blue !important;
+    }
   }
 }
