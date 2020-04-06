@@ -13,7 +13,7 @@ const TopNavbar = props => {
 
   return (
     <Navbar bg="dark" expand="sm" id='top-navbar' variant='dark'>
-      <Navbar.Brand id='name-brand'>Mike Heft</Navbar.Brand>
+      <Navbar.Brand id='name-brand'><Link to='/'>Mike Heft</Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
