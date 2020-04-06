@@ -1,7 +1,7 @@
 @import 'src/stylesheets/custom';
 
 #top-navbar {
-  background: linear-gradient(to bottom, #202020, $white, #111119) fixed !important;
+  background: linear-gradient(to bottom, #202020, $white, $midnight-blue) fixed !important;
 
   #name-brand.navbar-brand {
     color: $soft-red;

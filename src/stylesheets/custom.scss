@@ -5,5 +5,16 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 
 html, body {
-  height: 100%
+  height: 100%;
+  font-family: 'Roboto', sans-serif !important;
 }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.1em;
+  background: -webkit-linear-gradient($midnight-blue, $dark-blue, $midnight-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
