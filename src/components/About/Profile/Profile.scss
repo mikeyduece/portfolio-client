@@ -1,7 +1,7 @@
 @import 'src/stylesheets/custom';
 
 section {
-  width: 80%;
+  width: 100%;
 
   #profile-container {
     width: 15rem;
@@ -11,5 +11,9 @@ section {
       padding-top: 2rem;
       min-height: 7rem;
     }
+  }
+
+  .chart-parent {
+    min-height: 30px; //this value should be fixed % wouldn't work.
   }
 }
