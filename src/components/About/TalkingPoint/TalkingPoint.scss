@@ -1,0 +1,72 @@
+@import 'src/stylesheets/custom';
+
+@mixin hex-properties($degrees) {
+  background-color: inherit;
+  content: "";
+  height: inherit;
+  position: absolute;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  transform: rotateZ($degrees);
+  top: 0;
+  width: inherit;
+}
+
+.about {
+  .fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    min-height: 10rem;
+    width: 100%;
+
+    .hex-container {
+      min-width: 0;
+      width: 17rem;
+    }
+
+    .hexagon {
+      display: inline-block;
+      height: 80px;
+      position: relative;
+      text-align: center;
+      width: 80px;
+
+      .speedometer-icon-container {
+        background: #F6AE2D;
+        display: inline-block;
+        height: 100%;
+        width: calc(100% * 0.57735);
+
+        &:before {
+          @include hex-properties(60deg);
+        }
+
+        svg.icon {
+          font-size: 3.75rem;
+          color: $white;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 10%;
+          z-index: 1;
+          margin: auto;
+        }
+
+        &:after {
+          @include hex-properties(-60deg)
+        }
+      }
+    }
+  }
+
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

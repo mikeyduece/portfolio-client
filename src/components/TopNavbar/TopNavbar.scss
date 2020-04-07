@@ -1,16 +1,37 @@
 @import 'src/stylesheets/custom';
 
-#top-navbar {
-  background: linear-gradient(to bottom, #202020, $white, #111119) fixed !important;
+@mixin after-underline {
+  border-bottom: 2px solid $soft-red;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
+}
 
-  #name-brand.navbar-brand {
+#top-navbar {
+  background: linear-gradient(to bottom, $dark-desaturated-blue, $midnight-blue, $dark-desaturated-blue) fixed !important;
+  letter-spacing: 0.2rem;
+  line-height: 1.5;
+  font-weight: 100;
+
+  #name-brand.navbar-brand a {
     color: $soft-red;
+    position: relative;
+
+    &:hover, &:active {
+      text-decoration: none;
+
+      &:after {
+        @include after-underline;
+        top: 1.4em;
+      }
+    }
   }
 
   .navbar-collapse.collapse {
     .navbar-nav {
       .nav-link {
-        color: $greyish-red;
+        color: $grayish-red;
         position: relative;
 
         &.active, &:hover, &:active {
@@ -18,12 +39,8 @@
           text-decoration: none;
 
           &:after {
-            border-bottom: 2px solid $soft-red;
+            @include after-underline;
             bottom: 0.1em;
-            content: " ";
-            left: 0;
-            position: absolute;
-            right: 0;
           }
         }
       }

@@ -1,5 +1,21 @@
 @import 'src/stylesheets/custom';
 
 .about {
+  height: 100%;
+  width: 100%;
+
+  #heading {
+    position: relative;
+
+    &:before {
+      content: "";
+      left: 10%;
+      bottom: 0;
+      height: 1px;
+      position: absolute;
+      width: 77%;
+      border-bottom: 0.25rem solid $dark-desaturated-blue !important;
+    }
+  }
 
 }

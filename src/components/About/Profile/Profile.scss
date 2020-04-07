@@ -1,0 +1,19 @@
+@import 'src/stylesheets/custom';
+
+section {
+  width: 100%;
+
+  #profile-container {
+    width: 15rem;
+
+    #loader-container {
+      margin-left: 2rem;
+      padding-top: 2rem;
+      min-height: 7rem;
+    }
+  }
+
+  .chart-parent {
+    min-height: 30px; //this value should be fixed % wouldn't work.
+  }
+}
