@@ -3,20 +3,22 @@ import {
   ResponsiveContainer,
   PieChart,
   Pie,
-  Cell
+  Cell,
+  Legend
 }            from 'recharts';
 
 const Chart = ({ data }) => {
 
   return (
-    <div style={ { width: '100%', height: 300 } }>
+    <div style={ { width: '20em', height: 300 } }>
       <ResponsiveContainer>
         <PieChart>
-          <Pie dataKey="value" data={ data }>
+          <Pie dataKey="value" data={ data } margin={{right: 0}}>
             {
               data.map((entry) => <Cell key={ entry.name } fill={ entry.color } />)
             }
           </Pie>
+        <Legend layout='vertical' align='right' verticalAlign='middle' />
         </PieChart>
       </ResponsiveContainer>
     </div>
