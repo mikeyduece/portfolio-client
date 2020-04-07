@@ -21,10 +21,9 @@ const Profile = () => {
   return (
     <section>
       <div
-        className='d-flex flex-column justify-content-center justify-content-md-between align-items-center'>
-        <Chart data={Object.values(languages)}/>
+        className='d-flex flex-column-reverse flex-md-row justify-content-center justify-content-md-around align-items-center'>
 
-        <div className='d-flex flex-column justify-content-between align-items-center align-items-md-start'
+        <div className='d-flex flex-column flex-md-column-reverse justify-content-center align-items-center align-items-md-start'
              id='profile-container'>
           <div className='text-center'>
             <p>This is my bio!</p>
@@ -42,6 +41,7 @@ const Profile = () => {
         </div>
 
 
+        <Chart data={Object.values(languages)}/>
       </div>
 
     </section>
