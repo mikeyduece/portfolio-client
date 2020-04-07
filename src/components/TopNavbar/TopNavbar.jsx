@@ -12,7 +12,7 @@ const TopNavbar = props => {
   const isActive = path => path === props.match.path ? 'active' : ''
 
   return (
-    <Navbar bg="dark" expand="sm" id='top-navbar' variant='dark'>
+    <Navbar bg="dark" expand="sm" id='top-navbar' variant='dark' className='sticky-top'>
       <Navbar.Brand id='name-brand'><Link to='/'>Mike Heft</Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

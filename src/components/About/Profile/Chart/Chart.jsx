@@ -14,12 +14,12 @@ const Chart = ({ data }) => {
     <div style={ { width: '20em', height: 300 } }>
       <ResponsiveContainer>
         <PieChart>
-          <Pie dataKey="value" data={ data } margin={ { right: 0 } } cy={ 119 }>
+          <Pie dataKey="value" data={ data } margin={ { right: 0 } } cy={ 100 }>
             {
               data.map((entry) => <Cell key={ entry.name } fill={ entry.color } />)
             }
           </Pie>
-          <Legend layout='vertical' align='right' verticalAlign='middle' />
+          <Legend layout='horizontal' align='center' verticalAlign='top' />
           <Tooltip />/>
         </PieChart>
       </ResponsiveContainer>

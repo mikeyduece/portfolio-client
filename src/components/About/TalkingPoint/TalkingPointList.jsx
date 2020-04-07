@@ -13,8 +13,8 @@ const TalkingPointList = () => {
           </div>
         </div>
         <div className='text-center mt-3'>
-          <h5>Fast</h5>
-          <p>Performant queries are my priority</p>
+          <h5>Performance</h5>
+          <p>Prioritize performant queries on the backend</p>
         </div>
       </div>
       <div className='hex-container d-flex flex-column align-items-center m-3'>
@@ -24,8 +24,8 @@ const TalkingPointList = () => {
           </div>
         </div>
         <div className='text-center mt-3'>
-          <h5>Fast</h5>
-          <p>Performant queries are my priority</p>
+          <h5>Responsive</h5>
+          <p>Mobile first development, ensuring large and small screen access</p>
         </div>
       </div>
       <div className='hex-container d-flex flex-column align-items-center m-3'>
@@ -35,21 +35,11 @@ const TalkingPointList = () => {
           </div>
         </div>
         <div className='text-center mt-3'>
-          <h5>Fast</h5>
-          <p>Performant queries are my priority</p>
+          <h5>Dynamic</h5>
+          <p>Making pages from to life</p>
         </div>
       </div>
-      <div className='hex-container d-flex flex-column align-items-center m-3'>
-        <div className='hexagon'>
-          <div className='speedometer-icon-container'>
-            <GiSpeedometer className='icon' />
-          </div>
-        </div>
-        <div className='text-center mt-3'>
-          <h5>Fast</h5>
-          <p>Performant queries are my priority</p>
-        </div>
-      </div>
+
     </div>
   )
 }
