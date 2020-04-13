@@ -1,1 +1,7 @@
 @import 'src/stylesheets/custom';
+
+.MuiCardContent-root{
+  .MuiTypography-root  {
+    min-height: 3em !important;
+  }
+}
