@@ -42,7 +42,8 @@ const useStyles = makeStyles({
   learnMore: {
     '&:hover': {
       color: '#38495a',
-      backgroundColor: '#F6AE2D'
+      backgroundColor: '#F6AE2D',
+      cursor: 'pointer'
     }
   }
 })
@@ -76,7 +77,7 @@ const ProjectCard = props => {
                 Project Description
               </Typography>
 
-              <MoreHorizIcon onClick={ handleClickOpen } />
+              <MoreHorizIcon onClick={ handleClickOpen } id='dialog-ellipsis'/>
             </div>
 
             <Dialog
