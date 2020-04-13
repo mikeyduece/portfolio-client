@@ -8,13 +8,7 @@
     position: relative;
 
     &:before {
-      content: "";
-      left: 10%;
-      bottom: 0;
-      height: 1px;
-      position: absolute;
-      width: 77%;
-      border-bottom: 0.25rem solid $dark-desaturated-blue !important;
+      @include pageHeading(10%, 0, 77%);
     }
   }
 

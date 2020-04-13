@@ -7,6 +7,7 @@
 html, body {
   min-height: 100vh;
   font-family: 'Roboto', sans-serif !important;
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -16,3 +17,12 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
+@mixin pageHeading($left, $bottom, $width) {
+  content: "";
+  left: $left;
+  bottom: $bottom;
+  width: $width;
+  height: 1px;
+  position: absolute;
+  border-bottom: 0.25rem solid #38495a !important;
+}
