@@ -42,7 +42,8 @@ const useStyles = makeStyles({
   learnMore: {
     '&:hover': {
       color: '#38495a',
-      backgroundColor: '#F6AE2D'
+      backgroundColor: '#F6AE2D',
+      cursor: 'pointer'
     }
   }
 })
@@ -64,7 +65,7 @@ const ProjectCard = props => {
 
   return (
     <ThemeProvider theme={ theme }>
-      <Card className={ classes.root } boxShadow={ 10 }>
+      <Card className={ classes.root } boxshadow={ 5 }>
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -76,7 +77,7 @@ const ProjectCard = props => {
                 Project Description
               </Typography>
 
-              <MoreHorizIcon onClick={ handleClickOpen } />
+              <MoreHorizIcon onClick={ handleClickOpen } id='dialog-ellipsis'/>
             </div>
 
             <Dialog
@@ -110,7 +111,7 @@ const ProjectCard = props => {
                   href={ `${ url }` }
                   variant='outlined'
                   fullWidth
-                  borderRaduis='0'
+                  borderraduis='0'
                   className={ classes.learnMore }
           >
             Learn More
