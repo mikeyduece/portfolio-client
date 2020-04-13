@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'https://heft-portfolio-api-development.herokuapp.com'
+  baseURL: 'https://heft-portfolio-api-development.herokuapp.com/api/v1'
 })
