@@ -28,5 +28,8 @@ export const useStyles = makeStyles({
       backgroundColor: '#F6AE2D',
       cursor: 'pointer'
     }
+  },
+  contactForm: {
+    width: '100%'
   }
 })

@@ -1,112 +1,142 @@
-// Dependencies
-import React, { useState } from 'react'
-import {
-  TextField,
-  Button
-}                          from '@material-ui/core'
+import React, { useState }   from 'react'
 import {
   Field,
   reduxForm
-}                          from 'redux-form'
-
+}                            from 'redux-form'
+import TextField             from '@material-ui/core/TextField'
+import TextareaAutosize      from '@material-ui/core/TextareaAutosize'
+import asyncValidate         from './Form/asyncValidate'
 import { withNavbar }        from '../withNavbar'
+import { useDispatch }       from 'react-redux'
 import { sendContactMailer } from '../../actions'
-import {
-  theme,
-  useStyles
-}                            from '../theme'
-import { ThemeProvider }     from 'react-bootstrap'
-
-const renderError = ({ error, touched }) => {
-  if (touched && error) {
-    return (
-      <div className='ui error message'>
-        <div className='header'>
-          { error }
-        </div>
-      </div>
-    )
-  }
-}
-
-const renderInput = ({ input, label, meta }) => {
-  const className = `field ${ meta.error && meta.touched ? 'error' : '' }`
-
-  return (
-    <div className={ className }>
-      <label>{ label }</label>
-      <input { ...input } autoComplete='off' />
-      { renderError(meta) }
-    </div>
-  )
-}
-
-const onSubmit = formValues => {
-  sendContactMailer(formValues)
-}
-
-const ContactMe = props => {
-  const { pristine, submitting } = props
-  const classes = useStyles()
-  const [value, setValue] = useState('')
-  const handleChange = (e) => setValue(e.target.value)
-
-  const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => {
-    return (
-      <TextField errortext={ `${ touched && error }` }
-                 onChange={ handleChange }
-                 { ...input }
-                 { ...custom }
-      />
-    )
-  }
-
-  return (
-    <ThemeProvider theme={ theme }>
-      <div className='d-flex justify-content-center'>
-        <form className='' onSubmit={ onSubmit } autoComplete='off'>
-          <div className='my-3'>
-            <Field name='name' component={ renderTextField } label='Your Name' placeholder='Your Name' />
-          </div>
-          <div className='my-3'>
-            <Field name='email' component={ renderTextField } label='Email' placeholder='Your Email' />
-          </div>
-          <div className='my-3'>
-            <Field name='subject' component={ renderTextField } label='Subject' placeholder='Subject' />
-          </div>
-          <div className='my-3'>
-            <Field name='body' component={ renderTextField } label='Body' multiline rows={ 10 } placeholder='Body'
-                   variant='outlined' />
-          </div>
-          <Button disabled={ pristine || submitting }
-                  color='primary'
-                  variant='outlined'
-                  className={ classes.btnOutline }
-                  size="small"
-                  m='auto'>
-            Submit
-          </Button>
-        </form>
-      </div>
-    </ThemeProvider>
-  )
-}
 
 const validate = values => {
   const errors = {}
-  const requiredFields = ['name', 'email', 'subject', 'body']
+  const requiredFields = [
+    'firstName',
+    'lastName',
+    'email',
+    'favoriteColor',
+    'notes'
+  ]
   requiredFields.forEach(field => {
     if (!values[field]) {
       errors[field] = 'Required'
     }
   })
-  if (values.email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+  if (
+    values.email &&
+    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+  ) {
     errors.email = 'Invalid email address'
   }
   return errors
 }
 
+const renderTextField = ({
+                           input,
+                           label,
+                           meta: { touched, error },
+                           ...custom
+                         }) => (
+  <TextField
+    hintText={ label }
+    floatingLabelText={ label }
+    errorText={ touched && error }
+    margin='normal'
+    fullWidth
+    required
+    { ...input }
+    { ...custom }
+  />
+)
+
+const renderTextArea = ({
+                          input,
+                          label,
+                          meta: { touched, error },
+                          ...custom
+                        }) => (
+  <TextareaAutosize rowsMin={ 10 }
+                    placeholder="Email Body"
+                    hintText={ label }
+                    floatingLabelText={ label }
+                    errorText={ touched && error }
+                    margin='normal'
+                    className='w-100'
+                    { ...input }
+                    { ...custom }
+
+  />
+
+)
+
+const ContactMe = props => {
+  const { handleSubmit, pristine, reset, submitting } = props
+  const [value, setValue] = useState('')
+  const handleChange = e => setValue(e.target.value)
+  const dispatch = useDispatch()
+
+
+  return (
+    <div className='container d-flex justify-content-center'>
+      <form onSubmit={ handleSubmit(formValues => dispatch(sendContactMailer(formValues))) } className='w-100'>
+        <div>
+          <Field
+            name="contact.name"
+            component={ renderTextField }
+            label="Your Name"
+            placeholder='Your Name'
+            value={ value }
+            onChange={ handleChange }
+          />
+        </div>
+        <div>
+          <Field name="contact.email"
+                 component={ renderTextField }
+                 label="Your Email"
+                 placeholder='Your Email'
+                 value={ value }
+                 onChange={ handleChange }
+          />
+        </div>
+        <div>
+          <Field name="contact.subject"
+                 component={ renderTextField }
+                 label="Subject"
+                 placeholder='Subject'
+                 value={ value }
+                 onChange={ handleChange }
+          />
+        </div>
+        <div>
+          <Field
+            name="contact.body"
+            component={ renderTextArea }
+            label="Body"
+            multiLine
+            rows='10'
+            variant='outlined'
+            value={ value }
+            onChange={ handleChange }
+            fullWidth
+          />
+        </div>
+        <div>
+          <button type="submit" disabled={ pristine || submitting }>
+            Submit
+          </button>
+          <button type="button" disabled={ pristine || submitting } onClick={ reset }>
+            Clear Values
+          </button>
+        </div>
+      </form>
+    </div>
+  )
+}
+
 export default reduxForm({
-  form: 'contactMeForm',
-  validate
+  form: 'contactMeForm', // a unique identifier for this form
+  validate,
+  asyncValidate
 })(withNavbar(ContactMe))
