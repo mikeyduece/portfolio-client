@@ -22,7 +22,7 @@ const ProjectList = () => {
   })
 
   return (
-    <div className='container projects d-flex flex-column'>
+    <div className='container projects d-flex flex-column mb-5'>
       <h1 className='mt-3 mb-5' id='heading'>Projects</h1>
       <div className='d-flex flex-wrap justify-content-center pinned-item-container'>
         { trail.map(({ x, height, ...rest }, index) => (

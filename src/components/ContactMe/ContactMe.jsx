@@ -81,9 +81,9 @@ const ContactMe = props => {
 
 
   return (
-    <div className='container d-flex flex-column contact'>
+    <div className='container d-flex flex-column contact align-items-center'>
       <h1 className='mt-3 mb-5' id='heading'>Contact Me</h1>
-      <form onSubmit={ handleSubmit(formValues => dispatch(sendContactMailer(formValues))) } className='w-100'>
+      <form onSubmit={ handleSubmit(formValues => dispatch(sendContactMailer(formValues))) } className='w-75'>
         <div>
           <Field
             name="contact.name"

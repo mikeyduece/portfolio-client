@@ -13,7 +13,7 @@ export const theme = createMuiTheme({
 export const useStyles = makeStyles({
   root: {
     minWidth: 200,
-    maxWidth: 200,
+    maxWidth: 'inherit',
     margin: '0.5em'
   },
   container: {
