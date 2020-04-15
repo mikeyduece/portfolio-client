@@ -3,11 +3,7 @@ import React, {
   useState,
   useRef
 }                        from 'react';
-import {
-  makeStyles,
-  createMuiTheme,
-  ThemeProvider
-}                        from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/core/styles'
 import Card              from '@material-ui/core/Card'
 import CardActionArea    from '@material-ui/core/CardActionArea'
 import CardActions       from '@material-ui/core/CardActions'
@@ -19,35 +15,10 @@ import DialogContent     from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle       from '@material-ui/core/DialogTitle'
 import MoreHorizIcon     from '@material-ui/icons/MoreHoriz'
-
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: '#38495a' }
-  },
-  spacing: 3
-})
-
-const useStyles = makeStyles({
-  root: {
-    minWidth: 200,
-    maxWidth: 200,
-    margin: '0.5em'
-  },
-  container: {
-    display: 'flex'
-  },
-  paper: {
-    margin: theme.spacing(1)
-  },
-  learnMore: {
-    '&:hover': {
-      color: '#38495a',
-      backgroundColor: '#F6AE2D',
-      cursor: 'pointer'
-    }
-  }
-})
-
+import {
+  useStyles,
+  theme
+}                        from '../../theme'
 
 const ProjectCard = props => {
   const [isOpen, setIsOpen] = useState(false)
@@ -77,7 +48,7 @@ const ProjectCard = props => {
                 Project Description
               </Typography>
 
-              <MoreHorizIcon onClick={ handleClickOpen } id='dialog-ellipsis'/>
+              <MoreHorizIcon onClick={ handleClickOpen } id='dialog-ellipsis' />
             </div>
 
             <Dialog
@@ -111,8 +82,7 @@ const ProjectCard = props => {
                   href={ `${ url }` }
                   variant='outlined'
                   fullWidth
-                  borderraduis='0'
-                  className={ classes.learnMore }
+                  className={ classes.btnOutline }
           >
             Learn More
           </Button>

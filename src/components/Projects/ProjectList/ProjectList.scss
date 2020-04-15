@@ -7,11 +7,11 @@
     }
   }
 
-  #heading {
-    position: relative;
-
-    &:before {
-      @include pageHeading(40%, -0.2em, 20%);
-    }
-  }
+  //#heading {
+  //  position: relative;
+  //
+  //  &:before {
+  //    @include pageHeading(40%, -0.2em, 20%);
+  //  }
+  //}
 }
