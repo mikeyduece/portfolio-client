@@ -23,10 +23,12 @@ export const useStyles = makeStyles({
     margin: theme.spacing(1)
   },
   btnOutline: {
+    color: '#38495a',
+    borderColor: '#38495a',
+    borderRadius: 0,
     '&:hover': {
-      color: '#38495a',
       backgroundColor: '#F6AE2D',
-      cursor: 'pointer'
+      cursor: 'pointer',
     }
   },
   contactForm: {

@@ -9,15 +9,16 @@ import asyncValidate         from './Form/asyncValidate'
 import { withNavbar }        from '../withNavbar'
 import { useDispatch }       from 'react-redux'
 import { sendContactMailer } from '../../actions'
+import Button                from '@material-ui/core/Button'
+import { useStyles }         from '../theme'
 
 const validate = values => {
   const errors = {}
   const requiredFields = [
-    'firstName',
-    'lastName',
+    'name',
     'email',
-    'favoriteColor',
-    'notes'
+    'subject',
+    'body'
   ]
   requiredFields.forEach(field => {
     if (!values[field]) {
@@ -72,14 +73,16 @@ const renderTextArea = ({
 )
 
 const ContactMe = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit, pristine, submitting } = props
   const [value, setValue] = useState('')
   const handleChange = e => setValue(e.target.value)
   const dispatch = useDispatch()
+  const classes = useStyles()
 
 
   return (
-    <div className='container d-flex justify-content-center'>
+    <div className='container d-flex flex-column contact'>
+      <h1 className='mt-3 mb-5' id='heading'>Contact Me</h1>
       <form onSubmit={ handleSubmit(formValues => dispatch(sendContactMailer(formValues))) } className='w-100'>
         <div>
           <Field
@@ -123,12 +126,16 @@ const ContactMe = props => {
           />
         </div>
         <div>
-          <button type="submit" disabled={ pristine || submitting }>
-            Submit
-          </button>
-          <button type="button" disabled={ pristine || submitting } onClick={ reset }>
-            Clear Values
-          </button>
+          <Button size="medium"
+                  m='auto'
+                  color="primary"
+                  variant='outlined'
+                  type='submit'
+                  className={ classes.btnOutline }
+                  disabled={pristine || submitting}
+          >
+            Send
+          </Button>
         </div>
       </form>
     </div>

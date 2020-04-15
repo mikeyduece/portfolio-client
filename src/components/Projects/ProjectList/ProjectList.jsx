@@ -17,6 +17,7 @@ const ProjectList = () => {
     opacity: 1,
     x: 40,
     height: 200,
+    width: 'auto',
     from: { opacity: 0, x: 40, height: 0 }
   })
 

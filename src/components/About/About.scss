@@ -4,12 +4,12 @@
   height: 100%;
   width: 100%;
 
-  #heading {
-    position: relative;
-
-    &:before {
-      @include pageHeading(10%, 0, 77%);
-    }
-  }
+  //#heading {
+  //  position: relative;
+  //
+  //  &:before {
+  //    @include pageHeading(10%, 0, 77%);
+  //  }
+  //}
 
 }
