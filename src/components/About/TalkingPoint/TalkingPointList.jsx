@@ -1,7 +1,11 @@
 // Dependencies
 import './TalkingPoint.scss'
-import React             from 'react'
-import { GiSpeedometer } from 'react-icons/gi'
+import React              from 'react'
+import {
+  GiSpeedometer,
+  GiRocketFlight
+}                         from 'react-icons/gi'
+import { MdDevicesOther } from 'react-icons/md'
 
 const TalkingPointList = () => {
   return (
@@ -20,7 +24,7 @@ const TalkingPointList = () => {
       <div className='hex-container d-flex flex-column align-items-center m-3'>
         <div className='hexagon'>
           <div className='speedometer-icon-container'>
-            <GiSpeedometer className='icon' />
+            <MdDevicesOther className='icon' />
           </div>
         </div>
         <div className='text-center mt-3'>
@@ -31,7 +35,7 @@ const TalkingPointList = () => {
       <div className='hex-container d-flex flex-column align-items-center m-3'>
         <div className='hexagon'>
           <div className='speedometer-icon-container'>
-            <GiSpeedometer className='icon' />
+            <GiRocketFlight className='icon' />
           </div>
         </div>
         <div className='text-center mt-3'>
