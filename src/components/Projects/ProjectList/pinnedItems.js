@@ -17,7 +17,7 @@ export default [
   },
   {
     name: 'netTube-API',
-    url: 'https://github.com/mikeyduece/netTube-api',
+    url: 'https://github.com/mikeyduece/nettube-api',
     description: 'Rails API providing endpoints for the netTube client application. Allowing for self-referential relationships ' +
       'where users can send, accept, decline friend requests. They can also favorite and/or add videos to custom playlists.'
   },
