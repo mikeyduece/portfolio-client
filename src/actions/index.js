@@ -5,7 +5,7 @@ import {
 }          from './types'
 
 export const fetchLanguages = () => async dispatch => {
-  const response = await api.get('/languages')
+  const response = await api.get('/api/v1/languages')
   dispatch({ type: FETCH_LANGUAGES, payload: response.data })
 }
 
