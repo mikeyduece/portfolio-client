@@ -7,6 +7,8 @@ import {
   useSelector,
   useDispatch
 }                           from 'react-redux'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import _                    from 'lodash'
 import { fetchLanguages }   from '../../../actions'
 import me                   from '../../../images/me.jpeg'
 
@@ -41,8 +43,8 @@ const Profile = () => {
           />
         </div>
 
+        { handleChartLoading(languages) }
 
-        <Chart data={ Object.values(languages) } />
       </div>
 
     </section>
@@ -50,3 +52,7 @@ const Profile = () => {
 }
 
 export default Profile
+
+const handleChartLoading = (languages) => {
+  return _.isEmpty(languages) ? <CircularProgress color="#38495a" /> : <Chart data={ Object.values(languages) } />
+}
